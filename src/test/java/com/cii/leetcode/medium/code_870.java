@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
 
 @SpringBootTest
 public class code_870 {
-
+    // 二分查找
     /**
      * 给定两个大小相等的数组A和B，A 相对于 B 的优势可以用满足A[i] > B[i]的索引 i的数目来描述。
      *
