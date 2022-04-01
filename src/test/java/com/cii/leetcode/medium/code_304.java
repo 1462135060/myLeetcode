@@ -5,6 +5,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 public class code_304 {
+    //前缀数组 和 差分数组
     /**
      * 给定一个二维矩阵 matrix，以下类型的多个请求：
      *

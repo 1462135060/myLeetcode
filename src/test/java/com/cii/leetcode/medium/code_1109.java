@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 @SpringBootTest
 public class code_1109 {
-
+    //前缀数组 和 差分数组
     /**
      * 这里有n个航班，它们分别从 1 到 n 进行编号。
      *

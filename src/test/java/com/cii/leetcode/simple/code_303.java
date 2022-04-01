@@ -5,7 +5,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 public class code_303 {
-
+    //前缀数组 和 差分数组
     /**
      * 给定一个整数数组 nums，处理以下类型的多个查询:
      *
