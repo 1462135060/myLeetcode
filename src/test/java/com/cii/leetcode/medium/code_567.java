@@ -8,7 +8,7 @@ import java.util.Objects;
 
 @SpringBootTest
 public class code_567 {
-
+    // 滑动窗口
     /**
      * 给你两个字符串s1和s2 ，写一个函数来判断 s2 是否包含 s1的排列。如果是，返回 true ；否则，返回 false 。
      * 换句话说，s1 的排列之一是 s2 的 子串 。
