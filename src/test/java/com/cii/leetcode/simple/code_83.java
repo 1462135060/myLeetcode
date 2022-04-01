@@ -38,7 +38,27 @@ public class code_83 {
         return res.next;
     }
 
-     /**
+    /**
+     * 快慢指针
+     */
+    public ListNode deleteDuplicates1(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast != null) {
+            if (slow.val != fast.val) {
+                slow.next = fast;
+                slow = slow.next;
+            }
+            fast = fast.next;
+        }
+        slow.next = null;
+        return head;
+    }
+
+    /**
      * 示例 1：
      * 输入：head = [1,1,2]
      * 输出：[1,2]
@@ -49,8 +69,8 @@ public class code_83 {
      */
      @Test
     void test() {
-         ListNode.printListNode(deleteDuplicates(ListNode.getListNode(new int[]{1,1,2})));
-         ListNode.printListNode(deleteDuplicates(ListNode.getListNode(new int[]{1,1,2,3,3})));
+         ListNode.printListNode(deleteDuplicates1(ListNode.getListNode(new int[]{1,1,2})));
+         ListNode.printListNode(deleteDuplicates1(ListNode.getListNode(new int[]{1,1,2,3,3})));
      }
 
 }
