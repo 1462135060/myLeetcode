@@ -3,6 +3,8 @@ package com.cii.leetcode.simple;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Stack;
+
 @SpringBootTest
 public class code_20 {
 
@@ -26,6 +28,30 @@ public class code_20 {
             s = s.replace("()", "").replace("{}", "").replace("[]", "");
         }
         return s.length() == 0;
+    }
+
+    public boolean isValid1(String s) {
+        char[] chars = s.toCharArray();
+        if (chars.length == 0) {
+            return true;
+        }
+        Stack<Character> stack = new Stack<>();
+        for (char c : chars) {
+            if (c == '(' || c == '{' || c == '[') {
+                stack.push(c);
+            } else {
+                if (stack.isEmpty() || stack.pop() != getLeft(c)) {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    private char getLeft(char c) {
+        if (c == ')') return '(';
+        else if (c == '}') return '{';
+        else return '[';
     }
 
     /**
@@ -52,10 +78,10 @@ public class code_20 {
      */
     @Test
     void test() {
-        System.out.println(isValid("()"));
-        System.out.println(isValid("()[]{}"));
-        System.out.println(isValid("(]"));
-        System.out.println(isValid("([)]"));
-        System.out.println(isValid("{[]}"));
+        System.out.println(isValid1("()"));
+        System.out.println(isValid1("()[]{}"));
+        System.out.println(isValid1("(]"));
+        System.out.println(isValid1("([)]"));
+        System.out.println(isValid1("{[]}"));
     }
 }
